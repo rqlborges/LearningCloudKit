@@ -12,6 +12,7 @@
 		5B6DB53B1F856610003D4268 /* CKRecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB53A1F856610003D4268 /* CKRecordExtension.swift */; };
 		5B6DB53D1F856694003D4268 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB53C1F856694003D4268 /* UserManager.swift */; };
 		5B6DB53F1F85676D003D4268 /* DrinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB53E1F85676D003D4268 /* DrinkManager.swift */; };
+		5B6DB5471F856CA8003D4268 /* EntityKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB5461F856CA8003D4268 /* EntityKey.swift */; };
 		60C945541F8430F1003D84C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C945531F8430F1003D84C7 /* AppDelegate.swift */; };
 		60C945591F8430F1003D84C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C945571F8430F1003D84C7 /* Main.storyboard */; };
 		60C9455C1F8430F1003D84C7 /* PopSoda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60C9455A1F8430F1003D84C7 /* PopSoda.xcdatamodeld */; };
@@ -53,6 +54,7 @@
 		5B6DB53A1F856610003D4268 /* CKRecordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CKRecordExtension.swift; path = PopSoda/Persistance/CKRecordExtension.swift; sourceTree = SOURCE_ROOT; };
 		5B6DB53C1F856694003D4268 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserManager.swift; path = PopSoda/Persistance/UserManager.swift; sourceTree = SOURCE_ROOT; };
 		5B6DB53E1F85676D003D4268 /* DrinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinkManager.swift; path = PopSoda/Persistance/DrinkManager.swift; sourceTree = SOURCE_ROOT; };
+		5B6DB5461F856CA8003D4268 /* EntityKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityKey.swift; sourceTree = "<group>"; };
 		60C945501F8430F1003D84C7 /* PopSoda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopSoda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C945531F8430F1003D84C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60C945581F8430F1003D84C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				5B6DB5361F8565A0003D4268 /* Drink.swift */,
 				5B6DB5381F8565BC003D4268 /* User.swift */,
+				5B6DB5461F856CA8003D4268 /* EntityKey.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				60C9458D1F85489E003D84C7 /* FriendsTableViewCell.swift in Sources */,
 				60C945541F8430F1003D84C7 /* AppDelegate.swift in Sources */,
 				60C945911F8548E8003D84C7 /* FriendsDrinksTableViewController.swift in Sources */,
+				5B6DB5471F856CA8003D4268 /* EntityKey.swift in Sources */,
 				5B6DB53F1F85676D003D4268 /* DrinkManager.swift in Sources */,
 				5B6DB5391F8565BC003D4268 /* User.swift in Sources */,
 				60C9458B1F85488D003D84C7 /* FriendsTableViewController.swift in Sources */,
