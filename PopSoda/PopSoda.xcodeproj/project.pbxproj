@@ -26,6 +26,8 @@
 		60C9458F1F8548C9003D84C7 /* FriendsDrinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C9458E1F8548C9003D84C7 /* FriendsDrinksTableViewCell.swift */; };
 		60C945911F8548E8003D84C7 /* FriendsDrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C945901F8548E8003D84C7 /* FriendsDrinksTableViewController.swift */; };
 		60C9459A1F854A04003D84C7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C945991F854A04003D84C7 /* CloudKit.framework */; };
+		60E950971F85657800ED3E58 /* MyDrinks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E950951F85657800ED3E58 /* MyDrinks.storyboard */; };
+		60E950991F85663400ED3E58 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E950981F85663400ED3E58 /* Friends.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		60C945901F8548E8003D84C7 /* FriendsDrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDrinksTableViewController.swift; sourceTree = "<group>"; };
 		60C945971F8549FA003D84C7 /* PopSoda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PopSoda.entitlements; sourceTree = "<group>"; };
 		60C945991F854A04003D84C7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		60E950961F85657800ED3E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PopSoda/OtherFiles/Base.lproj/MyDrinks.storyboard; sourceTree = "<group>"; };
+		60E950981F85663400ED3E58 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				60C945971F8549FA003D84C7 /* PopSoda.entitlements */,
+				60C945621F8430F1003D84C7 /* Info.plist */,
 				60C945961F854936003D84C7 /* OtherFiles */,
 				60C945951F85491E003D84C7 /* Persistence */,
 				60C945941F85490D003D84C7 /* Entity */,
@@ -196,9 +201,10 @@
 			children = (
 				60C945531F8430F1003D84C7 /* AppDelegate.swift */,
 				60C945571F8430F1003D84C7 /* Main.storyboard */,
+				60E950951F85657800ED3E58 /* MyDrinks.storyboard */,
+				60E950981F85663400ED3E58 /* Friends.storyboard */,
 				60C9455D1F8430F1003D84C7 /* Assets.xcassets */,
 				60C9455F1F8430F1003D84C7 /* LaunchScreen.storyboard */,
-				60C945621F8430F1003D84C7 /* Info.plist */,
 				60C9455A1F8430F1003D84C7 /* PopSoda.xcdatamodeld */,
 			);
 			path = OtherFiles;
@@ -328,8 +334,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60C945611F8430F1003D84C7 /* LaunchScreen.storyboard in Resources */,
+				60E950991F85663400ED3E58 /* Friends.storyboard in Resources */,
 				60C9455E1F8430F1003D84C7 /* Assets.xcassets in Resources */,
 				60C945591F8430F1003D84C7 /* Main.storyboard in Resources */,
+				60E950971F85657800ED3E58 /* MyDrinks.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +424,14 @@
 				60C945601F8430F1003D84C7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		60E950951F85657800ED3E58 /* MyDrinks.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E950961F85657800ED3E58 /* Base */,
+			);
+			name = MyDrinks.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
