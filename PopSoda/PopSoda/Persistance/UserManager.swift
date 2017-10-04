@@ -22,88 +22,51 @@ class UserManager {
     }
     
     // Persistance CRUD - Save User.
-    func save(mackStudent: User) {
+    func save(user: User) {
         let record = CKRecord(recordType: UserType)
-        record[.name]
+        record[.name] = user.name
         
         publicDB.save(record) { (record, error) in
             guard error == nil else {
-                print("Problema ao tentar salvar o registro")
+                print("Problema ao salvar o usuário")
                 return
             }
-            
-            print("Registro salvo com sucesso")
+            print("Usuário salvo com sucesso")
         }
     }
     
-    func fetchMackStudent(callback: @escaping ([MackStudent]?, Error?)->Void) {
-        // 1
+    // Persistance CRUD - Get All Users
+    func fetchData(callback: @escaping ([User]?, Error?)->Void) {
+        // Creates the predicate for true value
         let predicate = NSPredicate(value: true)
         
-        // 2
-        let query = CKQuery(recordType: MackStudentType, predicate: predicate)
+        // Creates the query for fetching the right data.
+        let query = CKQuery(recordType: UserType, predicate: predicate)
         
-        //3
+        // Performs the query search in the publicDB
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            
+            // Throws error to callback, passing a nil response and custom error.
             guard error == nil else {
                 callback(nil, error)
                 return
             }
             
-            guard let studentRecords = records else {
+            // Creates a NSError with code 500 Generic error. passing a nil response
+            guard let userRecords = records else {
                 let e = NSError(domain: "", code: 500, userInfo: nil)
                 callback(nil, e)
                 return
             }
             
-            let students = studentRecords.map({ (record) -> MackStudent in
-                let tia = record.value(forKey: "tia") as? String ?? ""
+            // Get the students data and build all objects for sending the response.
+            let users = userRecords.map({ (record) -> User in
                 let name = record.value(forKey: "name") as? String ?? ""
-                
-                return MackStudent(tia: tia, name: name)
+                return User(name: name)
             })
             
-            callback(students, nil)
-        }
-    }
-    
-    func startObservingChanges() {
-        
-        if let sid = UserDefaults.standard.value(forKey: "subscriptionID") as? String {
-            print("Notificação já registrada \(sid)")
-            //            return
-        }
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (authorized, error) in
-            guard error == nil, authorized else {
-                return
-            }
-            
-            self.getNotificationSettings()
-            
-            let subscription = CKQuerySubscription(recordType: self.MackStudentType, predicate: NSPredicate(value: true), options: [.firesOnRecordCreation])
-            
-            let info = CKNotificationInfo()
-            info.alertLocalizationKey = "mackstudents_updated_alert"
-            info.alertLocalizationArgs = ["name"]
-            info.soundName = "default"
-            info.desiredKeys = ["name"]
-            subscription.notificationInfo = info
-            
-            self.publicDB.save(subscription, completionHandler: { (savedSubscription, error) in
-                guard let savedSubscription = savedSubscription, error == nil else {
-                    print("Problema na Subscription \(error!)")
-                    return
-                }
-                
-                UserDefaults.standard.set(savedSubscription.subscriptionID, forKey: "subscriptionID")
-            })
-        }
-    }
-    
-    func getNotificationSettings() {
-        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-            print("Notification settings: \(settings)")
+            // Callback return with users setted.
+            callback(users, nil)
         }
     }
 }
