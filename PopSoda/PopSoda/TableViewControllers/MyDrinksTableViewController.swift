@@ -13,17 +13,29 @@ class MyDrinksTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if UserDefaults.standard.bool(forKey: "isFirstTimeInApp") == true {
+            askUserName()
+        }
+
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func askUserName() {
+        let alert = UIAlertController(title: "User Name", message: "Type your name bellow, and press Ok.", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default , handler: { (action) in
+            let text = alert.textFields?.first?.text ?? "BURRO"
+                //TODO: - Send User name to iCloud
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
+    
 
     // MARK: - Table view data source
 
@@ -91,5 +103,15 @@ class MyDrinksTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func addAction(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "New Drink", message: "Type new drink name, and tap Ok", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: .default , handler: { (action) in
+                //TODO: - create new drink
+                print(alert.textFields?.first?.text ?? "default")
+            }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

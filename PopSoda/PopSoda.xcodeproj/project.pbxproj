@@ -201,8 +201,8 @@
 			children = (
 				60C945531F8430F1003D84C7 /* AppDelegate.swift */,
 				60C945571F8430F1003D84C7 /* Main.storyboard */,
-				60E950951F85657800ED3E58 /* MyDrinks.storyboard */,
 				60E950981F85663400ED3E58 /* Friends.storyboard */,
+				60E950951F85657800ED3E58 /* MyDrinks.storyboard */,
 				60C9455D1F8430F1003D84C7 /* Assets.xcassets */,
 				60C9455F1F8430F1003D84C7 /* LaunchScreen.storyboard */,
 				60C9455A1F8430F1003D84C7 /* PopSoda.xcdatamodeld */,
