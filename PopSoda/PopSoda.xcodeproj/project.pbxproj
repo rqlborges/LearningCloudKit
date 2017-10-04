@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60C945541F8430F1003D84C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C945531F8430F1003D84C7 /* AppDelegate.swift */; };
+		60C945591F8430F1003D84C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C945571F8430F1003D84C7 /* Main.storyboard */; };
+		60C9455C1F8430F1003D84C7 /* PopSoda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60C9455A1F8430F1003D84C7 /* PopSoda.xcdatamodeld */; };
+		60C9455E1F8430F1003D84C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C9455D1F8430F1003D84C7 /* Assets.xcassets */; };
+		60C945611F8430F1003D84C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C9455F1F8430F1003D84C7 /* LaunchScreen.storyboard */; };
+		60C9456C1F8430F1003D84C7 /* PopSodaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C9456B1F8430F1003D84C7 /* PopSodaTests.swift */; };
+		60C945771F8430F2003D84C7 /* PopSodaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C945761F8430F2003D84C7 /* PopSodaUITests.swift */; };
+		60C945851F85482C003D84C7 /* MyDrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C945841F85482C003D84C7 /* MyDrinksTableViewController.swift */; };
+		60C945871F854849003D84C7 /* MyDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C945861F854849003D84C7 /* MyDrinkTableViewCell.swift */; };
+		60C9458B1F85488D003D84C7 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C9458A1F85488D003D84C7 /* FriendsTableViewController.swift */; };
+		60C9458D1F85489E003D84C7 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C9458C1F85489E003D84C7 /* FriendsTableViewCell.swift */; };
+		60C9458F1F8548C9003D84C7 /* FriendsDrinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C9458E1F8548C9003D84C7 /* FriendsDrinksTableViewCell.swift */; };
+		60C945911F8548E8003D84C7 /* FriendsDrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C945901F8548E8003D84C7 /* FriendsDrinksTableViewController.swift */; };
+		60C9459A1F854A04003D84C7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C945991F854A04003D84C7 /* CloudKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		60C945681F8430F1003D84C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60C945481F8430F1003D84C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60C9454F1F8430F1003D84C7;
+			remoteInfo = PopSoda;
+		};
+		60C945731F8430F1003D84C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60C945481F8430F1003D84C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60C9454F1F8430F1003D84C7;
+			remoteInfo = PopSoda;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		60C945501F8430F1003D84C7 /* PopSoda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopSoda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C945531F8430F1003D84C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		60C945581F8430F1003D84C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		60C9455B1F8430F1003D84C7 /* PopSoda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PopSoda.xcdatamodel; sourceTree = "<group>"; };
+		60C9455D1F8430F1003D84C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60C945601F8430F1003D84C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60C945621F8430F1003D84C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60C945671F8430F1003D84C7 /* PopSodaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopSodaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C9456B1F8430F1003D84C7 /* PopSodaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSodaTests.swift; sourceTree = "<group>"; };
+		60C9456D1F8430F1003D84C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60C945721F8430F1003D84C7 /* PopSodaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopSodaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C945761F8430F2003D84C7 /* PopSodaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSodaUITests.swift; sourceTree = "<group>"; };
+		60C945781F8430F2003D84C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60C945841F85482C003D84C7 /* MyDrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrinksTableViewController.swift; sourceTree = "<group>"; };
+		60C945861F854849003D84C7 /* MyDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrinkTableViewCell.swift; sourceTree = "<group>"; };
+		60C9458A1F85488D003D84C7 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		60C9458C1F85489E003D84C7 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		60C9458E1F8548C9003D84C7 /* FriendsDrinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDrinksTableViewCell.swift; sourceTree = "<group>"; };
+		60C945901F8548E8003D84C7 /* FriendsDrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDrinksTableViewController.swift; sourceTree = "<group>"; };
+		60C945971F8549FA003D84C7 /* PopSoda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PopSoda.entitlements; sourceTree = "<group>"; };
+		60C945991F854A04003D84C7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60C9454D1F8430F1003D84C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C9459A1F854A04003D84C7 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C945641F8430F1003D84C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C9456F1F8430F1003D84C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60C945471F8430F1003D84C7 = {
+			isa = PBXGroup;
+			children = (
+				60C945521F8430F1003D84C7 /* PopSoda */,
+				60C9456A1F8430F1003D84C7 /* PopSodaTests */,
+				60C945751F8430F2003D84C7 /* PopSodaUITests */,
+				60C945511F8430F1003D84C7 /* Products */,
+				60C945981F854A04003D84C7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		60C945511F8430F1003D84C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60C945501F8430F1003D84C7 /* PopSoda.app */,
+				60C945671F8430F1003D84C7 /* PopSodaTests.xctest */,
+				60C945721F8430F1003D84C7 /* PopSodaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60C945521F8430F1003D84C7 /* PopSoda */ = {
+			isa = PBXGroup;
+			children = (
+				60C945971F8549FA003D84C7 /* PopSoda.entitlements */,
+				60C945961F854936003D84C7 /* OtherFiles */,
+				60C945951F85491E003D84C7 /* Persistence */,
+				60C945941F85490D003D84C7 /* Entity */,
+				60C945921F8548F0003D84C7 /* Cells */,
+				60C945931F8548FE003D84C7 /* TableViewControllers */,
+			);
+			path = PopSoda;
+			sourceTree = "<group>";
+		};
+		60C9456A1F8430F1003D84C7 /* PopSodaTests */ = {
+			isa = PBXGroup;
+			children = (
+				60C9456B1F8430F1003D84C7 /* PopSodaTests.swift */,
+				60C9456D1F8430F1003D84C7 /* Info.plist */,
+			);
+			path = PopSodaTests;
+			sourceTree = "<group>";
+		};
+		60C945751F8430F2003D84C7 /* PopSodaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				60C945761F8430F2003D84C7 /* PopSodaUITests.swift */,
+				60C945781F8430F2003D84C7 /* Info.plist */,
+			);
+			path = PopSodaUITests;
+			sourceTree = "<group>";
+		};
+		60C945921F8548F0003D84C7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				60C9458E1F8548C9003D84C7 /* FriendsDrinksTableViewCell.swift */,
+				60C945861F854849003D84C7 /* MyDrinkTableViewCell.swift */,
+				60C9458C1F85489E003D84C7 /* FriendsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		60C945931F8548FE003D84C7 /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				60C945901F8548E8003D84C7 /* FriendsDrinksTableViewController.swift */,
+				60C945841F85482C003D84C7 /* MyDrinksTableViewController.swift */,
+				60C9458A1F85488D003D84C7 /* FriendsTableViewController.swift */,
+			);
+			path = TableViewControllers;
+			sourceTree = "<group>";
+		};
+		60C945941F85490D003D84C7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		60C945951F85491E003D84C7 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		60C945961F854936003D84C7 /* OtherFiles */ = {
+			isa = PBXGroup;
+			children = (
+				60C945531F8430F1003D84C7 /* AppDelegate.swift */,
+				60C945571F8430F1003D84C7 /* Main.storyboard */,
+				60C9455D1F8430F1003D84C7 /* Assets.xcassets */,
+				60C9455F1F8430F1003D84C7 /* LaunchScreen.storyboard */,
+				60C945621F8430F1003D84C7 /* Info.plist */,
+				60C9455A1F8430F1003D84C7 /* PopSoda.xcdatamodeld */,
+			);
+			path = OtherFiles;
+			sourceTree = "<group>";
+		};
+		60C945981F854A04003D84C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C945991F854A04003D84C7 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60C9454F1F8430F1003D84C7 /* PopSoda */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60C9457B1F8430F2003D84C7 /* Build configuration list for PBXNativeTarget "PopSoda" */;
+			buildPhases = (
+				60C9454C1F8430F1003D84C7 /* Sources */,
+				60C9454D1F8430F1003D84C7 /* Frameworks */,
+				60C9454E1F8430F1003D84C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopSoda;
+			productName = PopSoda;
+			productReference = 60C945501F8430F1003D84C7 /* PopSoda.app */;
+			productType = "com.apple.product-type.application";
+		};
+		60C945661F8430F1003D84C7 /* PopSodaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60C9457E1F8430F2003D84C7 /* Build configuration list for PBXNativeTarget "PopSodaTests" */;
+			buildPhases = (
+				60C945631F8430F1003D84C7 /* Sources */,
+				60C945641F8430F1003D84C7 /* Frameworks */,
+				60C945651F8430F1003D84C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60C945691F8430F1003D84C7 /* PBXTargetDependency */,
+			);
+			name = PopSodaTests;
+			productName = PopSodaTests;
+			productReference = 60C945671F8430F1003D84C7 /* PopSodaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		60C945711F8430F1003D84C7 /* PopSodaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60C945811F8430F2003D84C7 /* Build configuration list for PBXNativeTarget "PopSodaUITests" */;
+			buildPhases = (
+				60C9456E1F8430F1003D84C7 /* Sources */,
+				60C9456F1F8430F1003D84C7 /* Frameworks */,
+				60C945701F8430F1003D84C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60C945741F8430F1003D84C7 /* PBXTargetDependency */,
+			);
+			name = PopSodaUITests;
+			productName = PopSodaUITests;
+			productReference = 60C945721F8430F1003D84C7 /* PopSodaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60C945481F8430F1003D84C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Erick Borges";
+				TargetAttributes = {
+					60C9454F1F8430F1003D84C7 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					60C945661F8430F1003D84C7 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 60C9454F1F8430F1003D84C7;
+					};
+					60C945711F8430F1003D84C7 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 60C9454F1F8430F1003D84C7;
+					};
+				};
+			};
+			buildConfigurationList = 60C9454B1F8430F1003D84C7 /* Build configuration list for PBXProject "PopSoda" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 60C945471F8430F1003D84C7;
+			productRefGroup = 60C945511F8430F1003D84C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60C9454F1F8430F1003D84C7 /* PopSoda */,
+				60C945661F8430F1003D84C7 /* PopSodaTests */,
+				60C945711F8430F1003D84C7 /* PopSodaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60C9454E1F8430F1003D84C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C945611F8430F1003D84C7 /* LaunchScreen.storyboard in Resources */,
+				60C9455E1F8430F1003D84C7 /* Assets.xcassets in Resources */,
+				60C945591F8430F1003D84C7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C945651F8430F1003D84C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C945701F8430F1003D84C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60C9454C1F8430F1003D84C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C9455C1F8430F1003D84C7 /* PopSoda.xcdatamodeld in Sources */,
+				60C945851F85482C003D84C7 /* MyDrinksTableViewController.swift in Sources */,
+				60C945871F854849003D84C7 /* MyDrinkTableViewCell.swift in Sources */,
+				60C9458F1F8548C9003D84C7 /* FriendsDrinksTableViewCell.swift in Sources */,
+				60C9458D1F85489E003D84C7 /* FriendsTableViewCell.swift in Sources */,
+				60C945541F8430F1003D84C7 /* AppDelegate.swift in Sources */,
+				60C945911F8548E8003D84C7 /* FriendsDrinksTableViewController.swift in Sources */,
+				60C9458B1F85488D003D84C7 /* FriendsTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C945631F8430F1003D84C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C9456C1F8430F1003D84C7 /* PopSodaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C9456E1F8430F1003D84C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C945771F8430F2003D84C7 /* PopSodaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60C945691F8430F1003D84C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60C9454F1F8430F1003D84C7 /* PopSoda */;
+			targetProxy = 60C945681F8430F1003D84C7 /* PBXContainerItemProxy */;
+		};
+		60C945741F8430F1003D84C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60C9454F1F8430F1003D84C7 /* PopSoda */;
+			targetProxy = 60C945731F8430F1003D84C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		60C945571F8430F1003D84C7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60C945581F8430F1003D84C7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		60C9455F1F8430F1003D84C7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60C945601F8430F1003D84C7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60C945791F8430F2003D84C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		60C9457A1F8430F2003D84C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60C9457C1F8430F2003D84C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PopSoda/PopSoda.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
+				INFOPLIST_FILE = PopSoda/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.PopSoda;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60C9457D1F8430F2003D84C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PopSoda/PopSoda.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
+				INFOPLIST_FILE = PopSoda/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.PopSoda;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		60C9457F1F8430F2003D84C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
+				INFOPLIST_FILE = PopSodaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.PopSodaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PopSoda.app/PopSoda";
+			};
+			name = Debug;
+		};
+		60C945801F8430F2003D84C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
+				INFOPLIST_FILE = PopSodaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.PopSodaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PopSoda.app/PopSoda";
+			};
+			name = Release;
+		};
+		60C945821F8430F2003D84C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
+				INFOPLIST_FILE = PopSodaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.PopSodaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PopSoda;
+			};
+			name = Debug;
+		};
+		60C945831F8430F2003D84C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
+				INFOPLIST_FILE = PopSodaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.PopSodaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PopSoda;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60C9454B1F8430F1003D84C7 /* Build configuration list for PBXProject "PopSoda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C945791F8430F2003D84C7 /* Debug */,
+				60C9457A1F8430F2003D84C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60C9457B1F8430F2003D84C7 /* Build configuration list for PBXNativeTarget "PopSoda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C9457C1F8430F2003D84C7 /* Debug */,
+				60C9457D1F8430F2003D84C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60C9457E1F8430F2003D84C7 /* Build configuration list for PBXNativeTarget "PopSodaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C9457F1F8430F2003D84C7 /* Debug */,
+				60C945801F8430F2003D84C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60C945811F8430F2003D84C7 /* Build configuration list for PBXNativeTarget "PopSodaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C945821F8430F2003D84C7 /* Debug */,
+				60C945831F8430F2003D84C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		60C9455A1F8430F1003D84C7 /* PopSoda.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				60C9455B1F8430F1003D84C7 /* PopSoda.xcdatamodel */,
+			);
+			currentVersion = 60C9455B1F8430F1003D84C7 /* PopSoda.xcdatamodel */;
+			path = PopSoda.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 60C945481F8430F1003D84C7 /* Project object */;
+}
