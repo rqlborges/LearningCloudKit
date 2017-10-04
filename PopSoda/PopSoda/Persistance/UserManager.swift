@@ -1,113 +1,5 @@
-//import UIKit
-//import CloudKit
-//import UserNotifications
-//
-//class UserManager {
-//    
-//    // Singleton instance of the User Manager
-//    static let shared = UserManager()
-//    
-//    // Represents the default container specified in the iCloud section of the Capabilities tab for the project.
-//    let container: CKContainer
-//    let publicDB: CKDatabase
-//    let privateDB: CKDatabase
-//    
-//    let UserType = "User"
-//    
-//    // Initializer for the default container and for the 2 CloudKit Databases.
-//    init() {
-//        container = CKContainer.default()
-//        publicDB = container.publicCloudDatabase
-//        privateDB = container.privateCloudDatabase
-//    }
-//    
-//    // Persistance CRUD - Save User.
-//    func save(mackStudent: User) {
-//        let record = CKRecord(recordType: UserType)
-//        record[.name]
-//        
-//        publicDB.save(record) { (record, error) in
-//            guard error == nil else {
-//                print("Problema ao tentar salvar o registro")
-//                return
-//            }
-//            
-//            print("Registro salvo com sucesso")
-//        }
-//    }
-//    
-//    func fetchMackStudent(callback: @escaping ([MackStudent]?, Error?)->Void) {
-//        // 1
-//        let predicate = NSPredicate(value: true)
-//        
-//        // 2
-//        let query = CKQuery(recordType: MackStudentType, predicate: predicate)
-//        
-//        //3
-//        publicDB.perform(query, inZoneWith: nil) { (records, error) in
-//            guard error == nil else {
-//                callback(nil, error)
-//                return
-//            }
-//            
-//            guard let studentRecords = records else {
-//                let e = NSError(domain: "", code: 500, userInfo: nil)
-//                callback(nil, e)
-//                return
-//            }
-//            
-//            let students = studentRecords.map({ (record) -> MackStudent in
-//                let tia = record.value(forKey: "tia") as? String ?? ""
-//                let name = record.value(forKey: "name") as? String ?? ""
-//                
-//                return MackStudent(tia: tia, name: name)
-//            })
-//            
-//            callback(students, nil)
-//        }
-//    }
-//    
-//    func startObservingChanges() {
-//        
-//        if let sid = UserDefaults.standard.value(forKey: "subscriptionID") as? String {
-//            print("Notificação já registrada \(sid)")
-//            //            return
-//        }
-//        
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (authorized, error) in
-//            guard error == nil, authorized else {
-//                return
-//            }
-//            
-//            self.getNotificationSettings()
-//            
-//            let subscription = CKQuerySubscription(recordType: self.MackStudentType, predicate: NSPredicate(value: true), options: [.firesOnRecordCreation])
-//            
-//            let info = CKNotificationInfo()
-//            info.alertLocalizationKey = "mackstudents_updated_alert"
-//            info.alertLocalizationArgs = ["name"]
-//            info.soundName = "default"
-//            info.desiredKeys = ["name"]
-//            subscription.notificationInfo = info
-//            
-//            self.publicDB.save(subscription, completionHandler: { (savedSubscription, error) in
-//                guard let savedSubscription = savedSubscription, error == nil else {
-//                    print("Problema na Subscription \(error!)")
-//                    return
-//                }
-//                
-//                UserDefaults.standard.set(savedSubscription.subscriptionID, forKey: "subscriptionID")
-//            })
-//        }
-//    }
-//    
-//    func getNotificationSettings() {
-//        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-//            print("Notification settings: \(settings)")
-//        }
-//    }
-//}
-//
+import UIKit
+import CloudKit
 
 class UserManager {
     
@@ -132,6 +24,7 @@ class UserManager {
     func save(user: User) {
         let record = CKRecord(recordType: UserType)
         record[.name] = user.name
+        record[.drinks] = user.drinks
         
         publicDB.save(record) { (record, error) in
             guard error == nil else {
@@ -143,9 +36,9 @@ class UserManager {
     }
     
     // Persistance CRUD - Get All Users
-    func fetchData(callback: @escaping ([User]?, Error?)->Void) {
+    func fetchData(name: String, callback: @escaping ([User]?, Error?)->Void) {
         // Creates the predicate for true value
-        let predicate = NSPredicate(value: true)
+        let predicate = NSPredicate(format: "name == %@", "Erick")
         
         // Creates the query for fetching the right data.
         let query = CKQuery(recordType: UserType, predicate: predicate)
@@ -169,7 +62,8 @@ class UserManager {
             // Get the students data and build all objects for sending the response.
             let users = userRecords.map({ (record) -> User in
                 let name = record.value(forKey: "name") as? String ?? ""
-                return User(name: name)
+                let drinksString = record.value(forKey: "drinks") as? [String] ?? []
+                return User(name: name, drinks: drinksString)
             })
             
             // Callback return with users setted.

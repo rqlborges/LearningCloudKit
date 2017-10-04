@@ -10,11 +10,15 @@ import UIKit
 
 class MyDrinksTableViewController: UITableViewController {
 
+    var user:User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if UserDefaults.standard.bool(forKey: "isFirstTimeInApp") == true {
+        if UserDefaults.standard.string(forKey: "username") == nil {
             askUserName()
+        } else {
+            searchUser()
         }
 
         
@@ -22,20 +26,37 @@ class MyDrinksTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
-
     
     func askUserName() {
         let alert = UIAlertController(title: "User Name", message: "Type your name bellow, and press Ok.", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
         alert.addAction(UIAlertAction(title: "Ok", style: .default , handler: { (action) in
             let text = alert.textFields?.first?.text ?? "BURRO"
-                //TODO: - Send User name to iCloud
+            UserDefaults.standard.set(text, forKey: "username")
+            self.user = User(name: text)
+            UserManager.shared.save(user: self.user)
         }))
         self.present(alert, animated: true, completion: nil)
     }
     
+    func searchUser() {
+        let name = UserDefaults.standard.string(forKey: "username")
+        UserManager.shared.fetchData(name: name!, callback: { (users, error) in
+            guard error == nil else {
+                print("an error occurred.")
+                return
+            }
+            
+            if let user = users?.first {
+                self.user = user
+            } else {
+                return
+            }
+            
+        })
+    }
 
     // MARK: - Table view data source
 
@@ -109,7 +130,11 @@ class MyDrinksTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Ok", style: .default , handler: { (action) in
                 //TODO: - create new drink
-                print(alert.textFields?.first?.text ?? "default")
+                let text = alert.textFields?.first?.text ?? "LeiteDeBurra"
+                let drink = Drink(name:text)
+                self.user.drinks.append(drink)
+                UserManager.shared.save(user: self.user)
+                print(self.user)
             }))
         self.present(alert, animated: true, completion: nil)
     }
