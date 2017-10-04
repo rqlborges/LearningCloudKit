@@ -12,19 +12,19 @@ class UserManager {
     let publicDB: CKDatabase
     let privateDB: CKDatabase
     
-    let MackStudentType = "MackStudent"
+    let UserType = "User"
     
-    // MARK: - Initializers
+    // Initializer for the default container and for the 2 CloudKit Databases.
     init() {
         container = CKContainer.default()
         publicDB = container.publicCloudDatabase
         privateDB = container.privateCloudDatabase
     }
     
-    func save(mackStudent: MackStudent) {
-        let record = CKRecord(recordType: MackStudentType)
-        record[.tia] = mackStudent.tia
-        record[.name] = mackStudent.name
+    // Persistance CRUD - Save User.
+    func save(mackStudent: User) {
+        let record = CKRecord(recordType: UserType)
+        record[.name]
         
         publicDB.save(record) { (record, error) in
             guard error == nil else {

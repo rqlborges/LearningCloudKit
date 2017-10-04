@@ -1,7 +1,7 @@
 import Foundation
 
 enum UserKey: String {
-    case name
+    case userName
 }
 
 struct User {

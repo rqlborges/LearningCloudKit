@@ -1,7 +1,7 @@
 import Foundation
 
 enum DrinkKey: String {
-    case name
+    case drinkName
 }
 
 struct Drink {
