@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B6DB5371F8565A0003D4268 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB5361F8565A0003D4268 /* Drink.swift */; };
+		5B6DB5391F8565BC003D4268 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB5381F8565BC003D4268 /* User.swift */; };
+		5B6DB53B1F856610003D4268 /* CKRecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB53A1F856610003D4268 /* CKRecordExtension.swift */; };
+		5B6DB53D1F856694003D4268 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB53C1F856694003D4268 /* UserManager.swift */; };
+		5B6DB53F1F85676D003D4268 /* DrinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6DB53E1F85676D003D4268 /* DrinkManager.swift */; };
 		60C945541F8430F1003D84C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C945531F8430F1003D84C7 /* AppDelegate.swift */; };
 		60C945591F8430F1003D84C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C945571F8430F1003D84C7 /* Main.storyboard */; };
 		60C9455C1F8430F1003D84C7 /* PopSoda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60C9455A1F8430F1003D84C7 /* PopSoda.xcdatamodeld */; };
@@ -41,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B6DB5361F8565A0003D4268 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = SOURCE_ROOT; };
+		5B6DB5381F8565BC003D4268 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
+		5B6DB53A1F856610003D4268 /* CKRecordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKRecordExtension.swift; sourceTree = SOURCE_ROOT; };
+		5B6DB53C1F856694003D4268 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = SOURCE_ROOT; };
+		5B6DB53E1F85676D003D4268 /* DrinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkManager.swift; sourceTree = SOURCE_ROOT; };
 		60C945501F8430F1003D84C7 /* PopSoda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopSoda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C945531F8430F1003D84C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60C945581F8430F1003D84C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +175,8 @@
 		60C945941F85490D003D84C7 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				5B6DB5361F8565A0003D4268 /* Drink.swift */,
+				5B6DB5381F8565BC003D4268 /* User.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -172,6 +184,9 @@
 		60C945951F85491E003D84C7 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				5B6DB53A1F856610003D4268 /* CKRecordExtension.swift */,
+				5B6DB53C1F856694003D4268 /* UserManager.swift */,
+				5B6DB53E1F85676D003D4268 /* DrinkManager.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -340,12 +355,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				60C9455C1F8430F1003D84C7 /* PopSoda.xcdatamodeld in Sources */,
+				5B6DB5371F8565A0003D4268 /* Drink.swift in Sources */,
+				5B6DB53D1F856694003D4268 /* UserManager.swift in Sources */,
 				60C945851F85482C003D84C7 /* MyDrinksTableViewController.swift in Sources */,
 				60C945871F854849003D84C7 /* MyDrinkTableViewCell.swift in Sources */,
 				60C9458F1F8548C9003D84C7 /* FriendsDrinksTableViewCell.swift in Sources */,
+				5B6DB53B1F856610003D4268 /* CKRecordExtension.swift in Sources */,
 				60C9458D1F85489E003D84C7 /* FriendsTableViewCell.swift in Sources */,
 				60C945541F8430F1003D84C7 /* AppDelegate.swift in Sources */,
 				60C945911F8548E8003D84C7 /* FriendsDrinksTableViewController.swift in Sources */,
+				5B6DB53F1F85676D003D4268 /* DrinkManager.swift in Sources */,
+				5B6DB5391F8565BC003D4268 /* User.swift in Sources */,
 				60C9458B1F85488D003D84C7 /* FriendsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
