@@ -8,12 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="oLs-kg-5nI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wzy-Ik-vAG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cMC-Ym-IaA"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Ls4-j1-IdM"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XnT-nF-oiQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -36,15 +37,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LMn-5O-8Hq" customClass="FriendsTableViewCell" customModule="PopSoda" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" textLabel="eJw-dI-Zhg" style="IBUITableViewCellStyleDefault" id="LMn-5O-8Hq" customClass="FriendsTableViewCell" customModule="PopSoda" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LMn-5O-8Hq" id="8NF-rZ-omu">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJw-dI-Zhg">
+                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YIw-40-poP" kind="show" identifier="toFriendsDrinksTableViewController" id="5IC-Zm-P7R"/>
+                                    <outlet property="friendNameLabel" destination="eJw-dI-Zhg" id="TVq-bc-yzz"/>
+                                    <segue destination="YIw-40-poP" kind="show" identifier="toFriendsDrinks" id="5IC-Zm-P7R"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="809" y="888"/>
         </scene>
-        <!--Friends Drinks Table View Controller-->
+        <!--Title-->
         <scene sceneID="kxu-xT-eTj">
             <objects>
                 <tableViewController id="YIw-40-poP" customClass="FriendsDrinksTableViewController" customModule="PopSoda" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,13 +79,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BIF-xm-4Hi">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsDrinksCell" textLabel="YmJ-5J-zce" style="IBUITableViewCellStyleDefault" id="BIF-xm-4Hi" customClass="FriendsDrinksTableViewCell" customModule="PopSoda" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BIF-xm-4Hi" id="gbf-oB-fWk">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YmJ-5J-zce">
+                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="drinkNameLabel" destination="YmJ-5J-zce" id="Egj-pj-etF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -82,6 +105,10 @@
                             <outlet property="delegate" destination="YIw-40-poP" id="wtH-su-8mX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="7vw-Zu-Y5d"/>
+                    <connections>
+                        <outlet property="titleNavgationItem" destination="7vw-Zu-Y5d" id="Fcw-VX-qd5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Gt-bx-UYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

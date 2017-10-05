@@ -16,7 +16,7 @@ class MyDrinksTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tbView.reloadData()
+        tableView.reloadData()
         
         if UserDefaults.standard.string(forKey: "username") == nil {
             askUserName()
@@ -42,7 +42,7 @@ class MyDrinksTableViewController: UITableViewController {
             UserManager.shared.save(user: self.user)
         }))
         self.present(alert, animated: true, completion: nil)
-    self.tbView.reloadData()
+    tableView.reloadData()
     }
     
     func searchUser() {
@@ -58,9 +58,10 @@ class MyDrinksTableViewController: UITableViewController {
             } else {
                 return
             }
-            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         })
-        self.tbView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -81,76 +82,46 @@ class MyDrinksTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! MyDrinkTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myDrinkCell", for: indexPath) as! MyDrinkTableViewCell
 
         if user != nil{
-         cell.drinkName.text = user.drinksString[indexPath.row]
+         cell.drinkName.text = user.drinks[indexPath.row].name
         }else{
          cell.drinkName.text = ""
         }
 
         return cell
     }
-    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            self.user.drinks.remove(at: indexPath.row)
+            self.user.drinksString.remove(at: indexPath.row)
+            UserManager.shared.update(user: self.user)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func addAction(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "New Drink", message: "Type new drink name, and tap Ok", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Ok", style: .default , handler: { (action) in
-                //TODO: - create new drink
                 let text = alert.textFields?.first?.text ?? "LeiteDeBurra"
                 let drink = Drink(name:text)
                 self.user.drinks.append(drink)
-                UserManager.shared.save(user: self.user)
+                self.user.drinksString.append(drink.name)
+                UserManager.shared.update(user: self.user)
                 print(self.user)
+                self.tableView.reloadData()
             }))
         self.present(alert, animated: true, completion: nil)
-        self.tbView.reloadData()
+        tableView.reloadData()
     }
     
 }
