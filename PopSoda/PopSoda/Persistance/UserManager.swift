@@ -24,7 +24,7 @@ class UserManager {
     func save(user: User) {
         let record = CKRecord(recordType: UserType)
         record[.name] = user.name
-        record[.drinks] = user.drinks
+        record[.drinks] = user.drinksString
         
         publicDB.save(record) { (record, error) in
             guard error == nil else {

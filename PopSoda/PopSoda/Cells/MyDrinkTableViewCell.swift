@@ -10,6 +10,9 @@ import UIKit
 
 class MyDrinkTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var drinkName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

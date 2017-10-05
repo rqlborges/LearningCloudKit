@@ -11,10 +11,13 @@ import UIKit
 class MyDrinksTableViewController: UITableViewController {
 
     var user:User!
+    @IBOutlet var tbView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tbView.reloadData()
+        
         if UserDefaults.standard.string(forKey: "username") == nil {
             askUserName()
         } else {
@@ -39,6 +42,7 @@ class MyDrinksTableViewController: UITableViewController {
             UserManager.shared.save(user: self.user)
         }))
         self.present(alert, animated: true, completion: nil)
+    self.tbView.reloadData()
     }
     
     func searchUser() {
@@ -56,29 +60,38 @@ class MyDrinksTableViewController: UITableViewController {
             }
             
         })
+        self.tbView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if user != nil{
+          return self.user.drinks.count
+        }
+        
+        return 1
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! MyDrinkTableViewCell
 
-        // Configure the cell...
+        if user != nil{
+         cell.drinkName.text = user.drinksString[indexPath.row]
+        }else{
+         cell.drinkName.text = ""
+        }
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -137,6 +150,7 @@ class MyDrinksTableViewController: UITableViewController {
                 print(self.user)
             }))
         self.present(alert, animated: true, completion: nil)
+        self.tbView.reloadData()
     }
     
 }
